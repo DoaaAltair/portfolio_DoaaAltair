@@ -3,7 +3,7 @@
 Mijn persoonlijke webportfolio, ontworpen en gebouwd om mijn werk, projecten en reis als front-end developer te laten zien.
 Een moderne, snelle en toegankelijke portfolio-website gebouwd met Next.js (App Router). Dit project toont projecten, vaardigheden en achtergrond, en is ontworpen om eenvoudig uit te breiden en te onderhouden.
 
-- Live demo: (bijv. ``)
+- Live demo: (`https://portfolio-doaa-altair.vercel.app/`)
 - Technologieën: Next.js, React, TypeScript, Tailwind CSS
 
 ## Inhoud
