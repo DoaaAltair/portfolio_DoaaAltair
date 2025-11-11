@@ -3,8 +3,8 @@
 Mijn persoonlijke webportfolio, ontworpen en gebouwd om mijn werk, projecten en reis als front-end developer te laten zien.
 Een moderne, snelle en toegankelijke portfolio-website gebouwd met Next.js (App Router). Dit project toont projecten, vaardigheden en achtergrond, en is ontworpen om eenvoudig uit te breiden en te onderhouden.
 
-- Live demo: voeg hier je link toe (bijv. `https://jouw-domein.com`)
-- Technologieën: Next.js, React, TypeScript
+- Live demo: (bijv. ``)
+- Technologieën: Next.js, React, TypeScript, Tailwind CSS
 
 ## Inhoud
 
@@ -14,10 +14,8 @@ Een moderne, snelle en toegankelijke portfolio-website gebouwd met Next.js (App 
 - Scripts
 - Projectstructuur
 - Content beheren (projecten)
-- Configuratie en omgevingsvariabelen
 - Kwaliteit (toegankelijkheid, performance)
 - Deploy
-- Licentie
 - Contact
 
 ## Overzicht
@@ -81,17 +79,6 @@ Afhankelijk van je ontwerp kunnen er extra routes, componenten en stijlen zijn.
 ## Content beheren (projecten)
 
 Projecten staan in `app/data/projects.ts`. Voeg een nieuw project toe door een object te append’en aan de export. Voorbeeldvelden kunnen zijn: `title`, `description`, `tech`, `links`, `images`. Pas de UI aan als je extra velden nodig hebt.
-
-## Configuratie en omgevingsvariabelen
-
-Momenteel zijn er geen verplichte omgevingsvariabelen. Als je later API-sleutels of analytics toevoegt:
-
-```bash
-# .env.local
-NEXT_PUBLIC_...=waarde
-```
-
-Verwijs nooit gevoelige sleutels in de client-side code tenzij expliciet `NEXT_PUBLIC_` is bedoeld.
 
 ## Kwaliteit
 
