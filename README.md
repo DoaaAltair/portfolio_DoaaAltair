@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portfolio — Doaa Altair
 
-## Getting Started
+Mijn persoonlijke webportfolio, ontworpen en gebouwd om mijn werk, projecten en reis als front-end developer te laten zien.
+Een moderne, snelle en toegankelijke portfolio-website gebouwd met Next.js (App Router). Dit project toont projecten, vaardigheden en achtergrond, en is ontworpen om eenvoudig uit te breiden en te onderhouden.
 
-First, run the development server:
+- Live demo: voeg hier je link toe (bijv. `https://jouw-domein.com`)
+- Technologieën: Next.js, React, TypeScript
+
+## Inhoud
+
+- Overzicht
+- Functies
+- Snel starten
+- Scripts
+- Projectstructuur
+- Content beheren (projecten)
+- Configuratie en omgevingsvariabelen
+- Kwaliteit (toegankelijkheid, performance)
+- Deploy
+- Licentie
+- Contact
+
+## Overzicht
+
+Deze portfolio is opgezet met de Next.js App Router. Inhoud (zoals projecten) staat in eenvoudige TypeScript-bronnen, zodat je geen CMS nodig hebt. De site is geoptimaliseerd voor SEO, prestaties en toegankelijkheid.
+
+## Functies
+
+- Projectoverzicht met data uit `app/data/projects.ts`
+- SSR/SSG via Next.js App Router
+- TypeScript voor typeveiligheid
+- Best practices voor SEO (metadata, semantische HTML)
+- Klaar voor deploy op Vercel of eigen hosting
+
+## Snel starten
+
+1) Vereisten
+- Node.js LTS (aanbevolen)
+- npm, pnpm of yarn
+
+2) Installatie
+
+```bash
+npm install
+# of
+yarn
+# of
+pnpm install
+```
+
+3) Development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# open vervolgens http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev      # start dev-server met hot reload
+npm run build    # bouw productiebuild
+npm run start    # start productie-server (na build)
+npm run lint     # voer lints uit (indien geconfigureerd)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Projectstructuur
 
-## Learn More
+```text
+app/
+  page.tsx                # homepage
+  layout.tsx              # root layout (App Router)
+  data/
+    projects.ts           # brondata voor projecten
+public/                   # statische assets
+README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+Afhankelijk van je ontwerp kunnen er extra routes, componenten en stijlen zijn.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content beheren (projecten)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Projecten staan in `app/data/projects.ts`. Voeg een nieuw project toe door een object te append’en aan de export. Voorbeeldvelden kunnen zijn: `title`, `description`, `tech`, `links`, `images`. Pas de UI aan als je extra velden nodig hebt.
 
-## Deploy on Vercel
+## Configuratie en omgevingsvariabelen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Momenteel zijn er geen verplichte omgevingsvariabelen. Als je later API-sleutels of analytics toevoegt:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# .env.local
+NEXT_PUBLIC_...=waarde
+```
+
+Verwijs nooit gevoelige sleutels in de client-side code tenzij expliciet `NEXT_PUBLIC_` is bedoeld.
+
+## Kwaliteit
+
+- Toegankelijkheid: semantische HTML, aria-attributen waar nodig
+- Performance: gebruik van Next.js optimalisaties (afbeeldingen, fonts via `next/font`)
+- SEO: titel/metadata in layout en/of route-segmenten
+
+
+## Deploy
+
+Aanbevolen: Vercel (naadloze integratie met Next.js).
+
+1) Push naar GitHub/GitLab/Bitbucket
+2) Koppel de repository bij Vercel
+3) Vercel bouwt en deployt automatisch
+
+Alternatief: eigen server/container
+
+```bash
+npm run build
+npm run start
+```
+
+## Preview
+
+![Homepage screenshot](screencapture.png)
+
+## Contact
+
+Heb je feedback, een vraag of wil je samenwerken?
+Stuur gerust een bericht!  
+
+- Naam: Doaa Altair
+- E-mail: altair.doaa1994@hotmail.com
+- LinkedIn: https://www.linkedin.com/in/doaa-altair-488998195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app

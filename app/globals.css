@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #022436;
+  /* updated to match design */
+  --foreground: #E5E7EB;
+  /* light gray text */
+  --accent: #0EA5E9;
+  /* light blue accent */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
+  --font-roboto: var(--font-roboto);
+  --font-russo: 'Russo One', sans-serif;
+  --font-alumni: 'Alumni Sans', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #022436;
+    --foreground: #E5E7EB;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-alumni), system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Accent helpers */
+.text-accent {
+  color: var(--accent);
+}
+
+.border-accent {
+  border-color: color-mix(in oklab, var(--accent) 20%, transparent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+/* Custom styles for vertical text */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll on small devices */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.progress-bar {
+  animation: progressFill 1.5s ease-out;
+}
+
+/* Progress gradient utility for skill bars */
+.progress-gradient {
+  background-image: linear-gradient(90deg, var(--accent), #93c5fd, var(--foreground));
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Soft sideways float for the easter egg */
+@keyframes floatSideways {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-8px) translateY(-25px);
+  }
+}
+
+.egg-float {
+  animation: floatSideways 4.5s ease-in-out infinite;
+}
+
+/* Subtle glow using drop-shadow */
+.egg-glow {
+  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 65%, transparent)) drop-shadow(0 0 12px color-mix(in oklab, var(--accent) 35%, transparent));
+}
+
+/* Gentle hanging lamp swing */
+@keyframes lampSwing {
+  0% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+.lamp-swing {
+  transform-origin: top center;
+  animation: lampSwing 4.2s ease-in-out infinite;
+}
+
+/* CV grow/reveal animation */
+@keyframes growReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cv-grow {
+  animation: growReveal 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Russo One Font Class */
+.font-russo {
+  font-family: 'Russo One', 'Arial Black', 'Helvetica', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Alumni Sans Font Class */
+.font-alumni {
+  font-family: 'Alumni Sans', 'Arial', 'Helvetica', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
