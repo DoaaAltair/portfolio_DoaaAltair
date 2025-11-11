@@ -56,6 +56,12 @@ export default function ProjectDetailPage({ params }: Props) {
                         </Link>
                     </div>
                     <div className="col-span-6 sm:col-span-8 md:col-span-8 flex justify-end items-center gap-3 sm:gap-6">
+                        <Link
+                            href="/"
+                            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-russo text-xs sm:text-sm"
+                        >
+                            <span className="opacity-70">←</span> Terug
+                        </Link>
                         <a
                             href="https://www.linkedin.com/in/doaa-altair-488998195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                             target="_blank"
