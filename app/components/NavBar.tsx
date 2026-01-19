@@ -27,7 +27,8 @@ export default function NavBar({ sections, activeSection }: Props) {
                 ))}
             </nav>
 
-            <div className="flex items-center gap-3 text-[var(--muted)]">
+            {/* Social icons - hidden on mobile, shown on desktop */}
+            <div className="hidden sm:flex items-center gap-3 text-[var(--muted)]">
                 {[
                     {
                         href: 'https://vercel.com/doaa1devs-projects',

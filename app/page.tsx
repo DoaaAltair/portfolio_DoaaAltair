@@ -71,24 +71,24 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24 lg:px-10 pt-32">
+            <div className="relative z-10 mx-auto max-w-6xl px-6 pb-32 sm:pb-24 lg:px-10 pt-32">
 
                 <section
                     id="over"
                     className="grid items-center gap-16 pb-32 lg:grid-cols-2"
                 >
                     <div className="space-y-7">
-                        <div className="relative">
+                        <div className="relative ">
                             <HeroTypewriter
                                 name="Doaa Altair"
                                 className="text-5xl sm:text-6xl lg:text-7xl"
                             />
-                            <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-[var(--muted)]">
+                            <p className="mt-4 max-w-[38ch] sm:max-w-prose text-[15px] leading-relaxed text-[var(--muted)]">
                                 Ik ben een front-end developer uit Tilburg, Nederland.
                                 Ik bouw moderne, toegankelijke webinterfaces met React en Next.js, waarbij ik
                                 designs omzet in strakke, responsieve code die op elk apparaat goed presteert.
                             </p>
-                            <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+                            <p className="max-w-[38ch] sm:max-w-prose text-[15px] leading-relaxed text-[var(--muted)]">
                                 Ik heb een passie voor gebruiksvriendelijke interfaces, vloeiende interacties en het
                                 continu verbeteren van de gebruikerservaring. Ik leer graag nieuwe technieken en zoek
                                 altijd naar manieren om websites sneller, duidelijker en prettiger in gebruik te maken.
@@ -264,6 +264,49 @@ export default function Home() {
                     </a>
                 </section>
             </div>
+
+            {/* Footer with social icons - only visible on mobile */}
+            <footer className="sm:hidden fixed bottom-0 left-0 right-0 z-30 bg-[var(--bg)]/80 backdrop-blur-md border-t border-white/5 py-4">
+                <div className="mx-auto max-w-6xl px-6">
+                    <div className="flex items-center justify-center gap-4">
+                        {[
+                            {
+                                href: 'https://vercel.com/doaa1devs-projects',
+                                label: 'Vercel',
+                                src: '/vercel.svg',
+                            },
+                            {
+                                href: 'https://www.linkedin.com/in/doaa-altair',
+                                label: 'LinkedIn',
+                                src: '/linkedin.svg',
+                            },
+                            {
+                                href: 'https://github.com/DoaaAltair',
+                                label: 'GitHub',
+                                src: '/github.svg',
+                            },
+                        ].map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className="glass h-12 w-12 rounded-full grid place-items-center text-[var(--text)] hover:text-[var(--bg)] hover:bg-[var(--text)] transition-colors"
+                                aria-label={item.label}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    src={item.src}
+                                    alt={item.label}
+                                    width={24}
+                                    height={24}
+                                    className="h-6 w-6"
+                                    loading="lazy"
+                                />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </footer>
         </main>
     );
 }
