@@ -1,129 +1,252 @@
-## Portfolio — Doaa Altair
+# Portfolio - Doaa Altair
 
-Mijn persoonlijke webportfolio, ontworpen en gebouwd om mijn werk, projecten en reis als front-end developer te laten zien.
-Een moderne, snelle en toegankelijke portfolio-website gebouwd met Next.js (App Router). Dit project toont projecten, vaardigheden en achtergrond, en is ontworpen om eenvoudig uit te breiden en te onderhouden.
+Een modern, interactief portfolio website gebouwd met Next.js en React. Dit portfolio toont mijn projecten, vaardigheden en ervaring als front-end developer.
 
-- Live demo: voeg hier je link toe (bijv. `https://jouw-domein.com`)
-- Technologieën: Next.js, React, TypeScript
+## 🚀 Features
 
-## Inhoud
+### Hoofdfunctionaliteiten
+- **Responsive Design**: Volledig responsive en geoptimaliseerd voor alle schermformaten
+- **Smooth Scrolling**: Vloeiende scroll-animaties en sectie-navigatie
+- **Project Showcase**: Overzichtspagina met projectkaarten en detailpagina's per project
+- **Intersection Observer**: Automatische sectie-detectie voor actieve navigatie
+- **Scroll Indicator**: Visuele progress indicator tijdens het scrollen
+- **Glass Morphism UI**: Moderne glassmorphism design met backdrop blur effecten
 
-- Overzicht
-- Functies
-- Snel starten
-- Scripts
-- Projectstructuur
-- Content beheren (projecten)
-- Configuratie en omgevingsvariabelen
-- Kwaliteit (toegankelijkheid, performance)
-- Deploy
-- Licentie
-- Contact
+### Interactieve Componenten
+- **Hero Typewriter**: Geanimeerde typewriter effect voor de naam
+- **Dynamic Navigation**: Actieve sectie-highlighting tijdens scrollen
+- **Project Cards**: Hover-effecten en animaties op projectkaarten
+- **Project Detail Pages**: Dynamische routes voor elk project met scroll-animaties
+- **Smart Text Parsing**: Automatische parsing van projectbeschrijvingen met subtitels en bullet points
 
-## Overzicht
+## 🛠️ Technologieën
 
-Deze portfolio is opgezet met de Next.js App Router. Inhoud (zoals projecten) staat in eenvoudige TypeScript-bronnen, zodat je geen CMS nodig hebt. De site is geoptimaliseerd voor SEO, prestaties en toegankelijkheid.
+### Core
+- **Next.js 14.2.4** - React framework met App Router
+- **React 18.2.0** - UI library
+- **TypeScript 5.3.3** - Type-safe JavaScript
 
-## Functies
+### Styling & Animatie
+- **Tailwind CSS 3.4.9** - Utility-first CSS framework
+- **Framer Motion 12.23.26** - Animatie library voor React
+- **CSS Custom Properties** - Theming en variabelen
 
-- Projectoverzicht met data uit `app/data/projects.ts`
-- SSR/SSG via Next.js App Router
-- TypeScript voor typeveiligheid
-- Best practices voor SEO (metadata, semantische HTML)
-- Klaar voor deploy op Vercel of eigen hosting
+### Development Tools
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
 
-## Snel starten
+## 📁 Project Structuur
 
-1) Vereisten
-- Node.js LTS (aanbevolen)
-- npm, pnpm of yarn
+```
+portfolio-DoaaAltair/
+├── app/
+│   ├── components/          # React componenten
+│   │   ├── HeroTypewriter.tsx
+│   │   ├── NavBar.tsx
+│   │   ├── ScrollIndicator.tsx
+│   │   ├── ProjectDescription.tsx
+│   │   ├── MorphWords.tsx
+│   │   └── ...
+│   ├── data/               # Data bestanden
+│   │   └── projects.ts     # Project data
+│   ├── projecten/          # Project detail pagina's
+│   │   └── [slug]/
+│   │       └── page.tsx
+│   ├── globals.css         # Globale styles
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Homepage
+├── public/                 # Statische assets
+│   ├── *.png              # Project afbeeldingen
+│   └── ...
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
+```
 
-2) Installatie
+## 🎨 Design Features
 
+### Color Scheme
+- **Background**: `#8f917b` (Olive green)
+- **Text**: `#E8E4D8` (Cream white)
+- **Accent**: `#1F2A1E` (Dark green)
+- **Muted**: `#E8E4D8` (Cream white)
+
+### UI Elements
+- Glass morphism cards met backdrop blur
+- Smooth hover transitions
+- Gradient backgrounds en shapes
+- Custom scroll indicator
+- Responsive grid layouts
+
+## 🚦 Getting Started
+
+### Vereisten
+- Node.js 18+ 
+- npm of yarn
+
+### Installatie
+
+1. Clone de repository:
+```bash
+git clone <repository-url>
+cd portfolio-DoaaAltair
+```
+
+2. Installeer dependencies:
 ```bash
 npm install
-# of
-yarn
-# of
-pnpm install
 ```
 
-3) Development server
-
+3. Start development server:
 ```bash
 npm run dev
-# open vervolgens http://localhost:3000
 ```
 
-## Scripts
+4. Open [http://localhost:3000](http://localhost:3000) in je browser
 
-```bash
-npm run dev      # start dev-server met hot reload
-npm run build    # bouw productiebuild
-npm run start    # start productie-server (na build)
-npm run lint     # voer lints uit (indien geconfigureerd)
-```
-
-## Projectstructuur
-
-```text
-app/
-  page.tsx                # homepage
-  layout.tsx              # root layout (App Router)
-  data/
-    projects.ts           # brondata voor projecten
-public/                   # statische assets
-README.md
-```
-
-Afhankelijk van je ontwerp kunnen er extra routes, componenten en stijlen zijn.
-
-## Content beheren (projecten)
-
-Projecten staan in `app/data/projects.ts`. Voeg een nieuw project toe door een object te append’en aan de export. Voorbeeldvelden kunnen zijn: `title`, `description`, `tech`, `links`, `images`. Pas de UI aan als je extra velden nodig hebt.
-
-## Configuratie en omgevingsvariabelen
-
-Momenteel zijn er geen verplichte omgevingsvariabelen. Als je later API-sleutels of analytics toevoegt:
-
-```bash
-# .env.local
-NEXT_PUBLIC_...=waarde
-```
-
-Verwijs nooit gevoelige sleutels in de client-side code tenzij expliciet `NEXT_PUBLIC_` is bedoeld.
-
-## Kwaliteit
-
-- Toegankelijkheid: semantische HTML, aria-attributen waar nodig
-- Performance: gebruik van Next.js optimalisaties (afbeeldingen, fonts via `next/font`)
-- SEO: titel/metadata in layout en/of route-segmenten
-
-
-## Deploy
-
-Aanbevolen: Vercel (naadloze integratie met Next.js).
-
-1) Push naar GitHub/GitLab/Bitbucket
-2) Koppel de repository bij Vercel
-3) Vercel bouwt en deployt automatisch
-
-Alternatief: eigen server/container
+### Build voor Productie
 
 ```bash
 npm run build
-npm run start
+npm start
 ```
 
-## Preview
+## 📝 Scripts
 
-![Homepage screenshot](screencapture.png)
+- `npm run dev` - Start development server
+- `npm run build` - Build voor productie
+- `npm start` - Start productie server
+- `npm run lint` - Run ESLint
 
-## Contact
+## 🎯 Componenten Overzicht
 
-Heb je feedback, een vraag of wil je samenwerken?
-Stuur gerust een bericht!  
+### HeroTypewriter
+Geanimeerde typewriter component die tekst letter voor letter toont.
 
-- Naam: Doaa Altair
-- E-mail: altair.doaa1994@hotmail.com
-- LinkedIn: https://www.linkedin.com/in/doaa-altair-488998195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
+**Props:**
+- `name: string` - De tekst om te typen
+- `className?: string` - Optionele CSS classes
+- `speedMs?: number` - Typesnelheid in milliseconden (default: 110)
+
+### ScrollIndicator
+Visuele progress indicator die de scrollpositie toont.
+
+**Props:**
+- `progress: number` - Progress waarde tussen 0 en 1
+
+### NavBar
+Navigatiebalk met actieve sectie highlighting.
+
+**Props:**
+- `sections: Array<{id: string, label: string}>` - Secties voor navigatie
+- `activeSection: string` - Huidige actieve sectie
+
+### ProjectDescription
+Slimme tekst parser die projectbeschrijvingen formatteert met:
+- Automatische subtitel detectie
+- Bullet point parsing
+- Paragraaf formatting
+
+**Props:**
+- `description: string` - Project beschrijving tekst
+
+## 📊 Project Data Structuur
+
+Projecten worden opgeslagen in `app/data/projects.ts`:
+
+```typescript
+type Project = {
+    slug: string;
+    title: string;
+    subtitle?: string;
+    description: string;
+    shortDescription?: string;
+    logo: string;
+    image: string;
+    tech: string[];
+    liveHref?: string;
+    moreHref?: string;
+}
+```
+
+## 🎨 Customization
+
+### Kleuren Aanpassen
+Pas de CSS variabelen aan in `app/globals.css`:
+
+```css
+:root {
+    --bg: #8f917b;
+    --text: #E8E4D8;
+    --muted: #E8E4D8;
+    --accent: #1F2A1E;
+    --accent-strong: #1F2A1E;
+    --card: rgba(255, 255, 255, 0.04);
+}
+```
+
+### Projecten Toevoegen
+Voeg nieuwe projecten toe aan `app/data/projects.ts`:
+
+```typescript
+{
+    slug: "project-naam",
+    title: "Project Titel",
+    shortDescription: "Korte beschrijving...",
+    description: "Volledige beschrijving...",
+    logo: "logo.png",
+    image: "project.png",
+    tech: ["React", "TypeScript"],
+    liveHref: "https://...",
+    moreHref: "https://github.com/..."
+}
+```
+
+## 🌐 Deployment
+
+Dit project kan worden gedeployed op:
+- **Vercel** (aanbevolen voor Next.js)
+- **Netlify**
+- **Railway**
+- Elke andere platform die Next.js ondersteunt
+
+### Vercel Deployment
+
+1. Push code naar GitHub
+2. Import project in Vercel
+3. Vercel detecteert automatisch Next.js
+4. Deploy!
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🔧 Performance
+
+- **Code Splitting**: Automatisch door Next.js
+- **Image Optimization**: Next.js Image component
+- **Lazy Loading**: Images en componenten
+- **CSS Optimization**: Tailwind CSS purging
+
+## 📄 License
+
+Dit project is privé en voor persoonlijk gebruik.
+
+## 👤 Auteur
+
+**Doaa Altair**
+- Front-end Developer uit Tilburg, Nederland
+- Email: altair.doaa1994@hotmail.com
+
+## 🙏 Acknowledgments
+
+- Next.js team voor het geweldige framework
+- Tailwind CSS voor de utility-first approach
+- Framer Motion voor soepele animaties
+
+
